@@ -79,6 +79,31 @@ function Queue() {
     };
 }
 
+class Queue2 {
+    constructor() {
+        this.elements = [];
+    }
+    enqueue(value) {
+        this.elements.push(value);
+    }
+    dequeue() {
+        return this.elements.shift();
+    }
+
+    size() {
+        return this.elements.length;
+    }
+}
+
+let sol = new Queue2();
+sol.enqueue(2);
+sol.enqueue(3);
+let cielo = new Queue2();
+cielo.enqueue(1);
+console.log(cielo.dequeue());
+console.log(cielo.size());
+console.log(sol.size());
+
 /*⚠️ No modificar nada debajo de esta línea ⚠️*/
 module.exports = {
     Queue,
