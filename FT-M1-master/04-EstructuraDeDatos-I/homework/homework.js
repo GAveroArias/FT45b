@@ -25,7 +25,7 @@ function nFactorial(n, a) {
         return nFactorial(n - 1, a * n);
     }
 }
-console.log(nFactorial(4, 1));
+console.log(nFactorial(4, 2));
 console.log(nFactorial(5, 1));
 console.log(nFactorial(6, 1));
 //
@@ -71,14 +71,29 @@ function Queue() {
         return this.array.push(elemento);
     };
     this.dequeue = function (elemento) {
-        return this.array.push();
+        return this.array.shift();
     };
 
     this.size = function (elemento) {
         return this.array.length;
     };
 }
+const viaje = new Queue();
+viaje.enqueue("Panama");
+viaje.enqueue("Colombia");
+viaje.enqueue("Venezuela");
+//viaje.dequeue();
+console.log(viaje.size("Venezuela"));
 
+const viaje2 = new Queue();
+viaje2.enqueue("Peru");
+viaje2.enqueue("Chile");
+//viaje2.dequeue()
+console.log(viaje);
+console.log(viaje2);
+//
+//
+//
 class Queue2 {
     constructor() {
         this.elements = [];
@@ -95,14 +110,14 @@ class Queue2 {
     }
 }
 
-let sol = new Queue2();
-sol.enqueue(2);
-sol.enqueue(3);
+let luna = new Queue2();
+luna.enqueue(2);
+luna.enqueue(3);
 let cielo = new Queue2();
 cielo.enqueue(1);
 console.log(cielo.dequeue());
 console.log(cielo.size());
-console.log(sol.size());
+console.log(luna.size());
 
 /*⚠️ No modificar nada debajo de esta línea ⚠️*/
 module.exports = {

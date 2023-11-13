@@ -114,7 +114,7 @@ let textoUnderscore = crearCadena.bind(null, "_", "_");
 
 console.log(textoAsteriscos("asteriscos"));
 console.log(textoGuiones("guiones"));
-console.log(textoUnderscore("guiones bajos"));
+console.log(textoUnderscore("guiones_bajos"));
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
