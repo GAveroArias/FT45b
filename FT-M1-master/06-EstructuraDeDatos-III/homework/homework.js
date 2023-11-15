@@ -21,11 +21,13 @@ BinarySearchTree.prototype.insert = function (value) {
     if (value < this.value) {
         if (!this.left) {
             this.left = subTree;
+            return subTree;
         } else {
             this.left.insert(value);
         }
     } else if (!this.right) {
         this.right = subTree;
+        return subTree;
     } else {
         this.right.insert(value);
     }
@@ -41,6 +43,8 @@ BinarySearchTree.prototype.size = function () {
     } else {
         return 1 + this.left.size() + this.right.size();
     }
+
+    return 0;
 };
 
 BinarySearchTree.prototype.contains = function (value) {
@@ -75,6 +79,7 @@ BinarySearchTree.prototype.depthFirstForEach = function (
         if (this.right) {
             this.right.depthFirstForEach(cb, order);
         }
+        return this;
     } else if (order === "pre-order") {
         cb(this.value);
         if (this.left) {
@@ -83,6 +88,7 @@ BinarySearchTree.prototype.depthFirstForEach = function (
         if (this.right) {
             this.right.depthFirstForEach(cb, order);
         }
+        return this;
     } else if (order === "post-order") {
         if (this.left) {
             this.left.depthFirstForEach(cb, order);
@@ -91,6 +97,7 @@ BinarySearchTree.prototype.depthFirstForEach = function (
             this.right.depthFirstForEach(cb, order);
         }
         cb(this.value);
+        return this;
     }
 
     return this;
@@ -112,17 +119,25 @@ BinarySearchTree.prototype.breadthFirstForEach = function (cb) {
     return this;
 };
 
-// myBinaryST.insert(7);
-// myBinaryST.insert(6);
-// myBinaryST.insert(9);
-// myBinaryST.insert(25);
-// myBinaryST.insert(38);
-// myBinaryST.insert(33);
-// myBinaryST.insert(42);
-// myBinaryST.insert(11);
-// myBinaryST.insert(15);
-// myBinaryST.insert(16);
-// console.log(myBinaryST);
+myBinaryST.insert(7);
+myBinaryST.insert(6);
+myBinaryST.insert(9);
+myBinaryST.insert(25);
+myBinaryST.insert(38);
+myBinaryST.insert(33);
+myBinaryST.insert(42);
+myBinaryST.insert(11);
+myBinaryST.insert(15);
+myBinaryST.insert(16);
+//console.log(myBinaryST);
+//console.log(myBinaryST.size());
+//console.log(myBinaryST.contains(42));
+//console.log(myBinaryST.contains(41));
+//console.log(myBinaryST.depthFirstForEach((value) => console.log(value)));
+//myBinaryST.depthFirstForEach((value, inOrder) => console.log(value));
+//myBinaryST.depthFirstForEach((value, preOrder) => console.log(value));
+//myBinaryST.depthFirstForEach((value, postOrder) => console.log(value));
+//console.log(myBinaryST.breadthFirstForEach((value) => console.log(value)));
 
 // No modifiquen nada debajo de esta linea
 // --------------------------------
